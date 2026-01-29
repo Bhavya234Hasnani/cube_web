@@ -7,7 +7,6 @@ class PublicReadAdminWrite(BasePermission):
         return request.user and request.user.is_authenticated
     
 class ContactFormPermission(BasePermission):
-
     def has_permission(self, request, view):
         if request.method == "POST":
             return True
