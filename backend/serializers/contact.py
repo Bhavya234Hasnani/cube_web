@@ -1,8 +1,10 @@
-from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer
+from backend.models import ContactFormSubmission
 
-class ContactSubmissionSerializer(serializers.Serializer):
-    name = serializers.CharField(required=True,max_length=100)
-    phone = serializers.CharField(required=True,max_length=10)
-    email = serializers.EmailField(required=True)
-    message = serializers.CharField(required=True)
+class ContactFormSubmissionSerializer(ModelSerializer):
+    class Meta:
+        model = ContactFormSubmission
+        fields = "__all__"
 
+
+    

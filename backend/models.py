@@ -11,3 +11,8 @@ class ContactFormSubmission(models.Model):
         ("contacted", "Contacted"),
         ("closed", "Closed")
     ]
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="new")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.status})"
